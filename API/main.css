@@ -1,0 +1,12 @@
+body{
+    background-image: url(background2.jpeg);
+    /* width: 100%; */
+    background-size: 1370px 675px;
+    /* width: 400px; */
+
+}
+.box{
+    margin: 30px;
+    padding: 30px;
+    /* justify-content: space-between; */
+}
