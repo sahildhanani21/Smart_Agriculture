@@ -2,9 +2,9 @@
 
 $servername = "localhost";
 
-$username = "id19667734_agriitech_admin";
+$username = "";
 
-$password = "Jaypatel@2022";
+$password = "";
 
 $dbname = "id19667734_agriitech";
 
