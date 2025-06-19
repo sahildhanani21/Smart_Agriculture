@@ -1,0 +1,188 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <style>
+      .logo{
+       width: 4rem;
+            }
+      </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" {% static 'favicon.ico' %} ">
+    <title>AgriTech</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href=" {% static 'css/simplebar.css' %} ">
+     <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href=" {% static 'css/feather.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/dataTables.bootstrap4.css' %} ">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href=" {% static 'css/daterangepicker.css' %} ">
+    <!-- App CSS -->
+    <link rel="stylesheet" href=" {% static 'css/app-light.css' %} " id="lightTheme" disabled>
+    <link rel="stylesheet" href=" {% static 'css/app-dark.css' %} " id="darkTheme">
+  </head>
+  <body class="vertical  dark  ">
+    <div class="wrapper">
+      <nav class="topnav navbar navbar-light">
+        <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        <form class="form-inline mr-auto searchform text-muted">
+          <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
+        </form>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+              <i class="fe fe-sun fe-16"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+              <img class="logo" src="{% static 'images/logoo.png' %}" width="175" hight="175" /><br>
+          </div>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Menu</span>
+          </p>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/"><i class="fe fe-home fe-16"></i>
+                    <span class="ml-1 item-text">Dashboard</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Status</span>
+          </p>
+            <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/tablebasic"><i class="fas fa-tv "></i>
+                    <span class="ml-1 item-text">Live Status</span></a>
+                </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/tabledatatables"><i class="fas fa-history"></i>
+                    <span class="ml-1 item-text">History</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Feature</span>
+          </p>
+           <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/contact"><i class="fe fe-calendar fe-16"></i>
+                    <span class="ml-1 item-text">Calendar</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>About-us</span>
+          </p>
+           <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/calendar"><i class="fe fe-phone fe-16"></i>
+                    <span class="ml-1 item-text">Contact-us</span></a>
+                </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- ============================================================================================================= 1st main  Security-->
+    <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h2 class="mb-2 page-title">All sensors Live status</h2>
+              <p class="card-text"> </p>    <!-- sub Title -->
+              <div class="row my-4">
+                <!-- Small table -->
+                <div class="col-md-12">
+                  <div class="card shadow">
+                    <div class="card-body">
+                      <!-- table -->
+                      <table class="table datatables" id="dataTable-1">
+                        <thead>
+                          <tr>
+                            <th>sensor name</th>
+                            <th>sensor data</th>
+                            <th>Device ID</th>
+                            <th>Date and Time</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                          <td>Secuity</td>
+                          <td>{{ secvalue.sec_value }}</td>
+                          <td>{{ secvalue.device_id }}</td>
+                          <td>{{ secvalue.reading_time }}</td>
+                        </tr>
+                          <tr>
+                          <td>waterlevel</td>
+                          <td>{{ WaterLevel.wl_value }}</td>
+                            <td>{{ WaterLevel.device_id }}</td>
+                          <td>{{ WaterLevel.reading_time }}</td>
+                        </tr>
+                         <tr>
+                          <td>soil</td>
+                          <td>{{ soil.soil_value }}</td>
+                           <td>{{ soil.device_id }}</td>
+                          <td>{{ soil.reading_time }}</td>
+                        </tr>
+                        <tr>
+                          <td>Rain</td>
+                          <td>{{ Rain.rain_value }}</td>
+                           <td>{{ Rain.device_id }}</td>
+                          <td>{{ Rain.reading_time }}</td>
+                        </tr>
+                        <tr>
+                          <td>Fire</td>
+                          <td>{{ Fire.fire_value }}</td>
+                          <td>{{ Fire.device_id }}</td>
+                          <td>{{ Fire.reading_time }}</td>
+                        </tr>
+                        <tr>
+                          <td>Smoke</td>
+                          <td>{{ smoke.smoke_value }}</td>
+                          <td>{{ smoke.device_id }}</td>
+                          <td>{{ smoke.reading_time }}</td>
+                        </tr>
+                      </table>
+
+
+                    </div>
+                  </div>
+                </div> <!-- simple table -->
+              </div> <!-- end section -->
+            </div> <!-- .col-12 -->
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+      </main>                                                                                                            <!-- 1st main Security -->
+
+
+    <script src=" {% static 'js/jquery.min.js' %} "></script>
+    <script src=" {% static 'js/popper.min.js' %} "></script>
+    <script src=" {% static 'js/moment.min.js' %} "></script>
+    <script src=" {% static 'js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'js/simplebar.min.js' %} "></script>
+    <script src=" {% static 'js/daterangepicker.js' %} "></script>
+    <script src=" {% static 'js/jquery.stickOnScroll.js' %} "></script>
+    <script src=" {% static 'js/tinycolor-min.js' %} "></script>
+    <script src=" {% static 'js/config.js' %} "></script>
+    <script src=" {% static 'js/jquery.dataTables.min.js' %} "></script>
+    <script src=" {% static 'js/dataTables.bootstrap4.min.js' %} "></script>
+
+        <script src=" {% static 'js/apps.js' %} "></script>
+  </body>
+</html>

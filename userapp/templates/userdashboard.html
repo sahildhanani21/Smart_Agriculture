@@ -1,0 +1,731 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+      <style>
+
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(55, 142, 181, 0.5), rgba(55, 142, 181, 0.2)), url("{% static 'images/bg.jpg' %}") top center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: -90px;
+}
+img{
+<!--width:50px;-->
+}
+.logo{
+width: 4rem;
+}
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: -1px 0 2px #2f4d5a;
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: -1px 0 2px #2f4d5a;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #263f49;
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-top: -90px;
+  margin-bottom: 15px;
+  background: white;
+  color: #2f4d5a;
+  border-top: 4px solid #67b0d1;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #b5d9e9;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #a2cfe3;
+}
+
+#footer .footer-top .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 4;
+}
+
+#footer .footer-top .footer-newsletter form input[type=email] {
+  border: 0;
+  padding: 4px;
+  width: calc(100% - 110px);
+}
+
+#footer .footer-top .footer-newsletter form input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #67b0d1;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 4;
+}
+
+#footer .footer-top .footer-newsletter form input[type=submit]:hover {
+  background: #409cc5;
+}
+
+#footer .copyright {
+  border-top: 1px solid #385b6b;
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+  #footer .footer-top .footer-info {
+    margin: -20px 0 30px 0;
+  }
+}</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=" {% static 'favicon.ico' %} ">
+    <title>Agritech </title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href=" {% static 'css/simplebar.css' %} ">
+       <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href=" {% static 'css/feather.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/select2.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/dropzone.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/uppy.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/jquery.steps.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/jquery.timepicker.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/quill.snow.css' %} ">
+     <link rel="stylesheet" href="{% static 'css/style-starter.css'%}">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href=" {% static 'css/daterangepicker.css' %} ">
+    <!-- App CSS -->
+    <link rel="stylesheet" href=" {% static 'css/app-light.css' %} " id="lightTheme" disabled>
+    <link rel="stylesheet" href=" {% static 'css/app-dark.css' %} " id="darkTheme">
+  </head>
+  <body class="vertical  dark  ">
+    <div class="wrapper">
+      <nav class="topnav navbar navbar-light">
+        <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        <form class="form-inline mr-auto searchform text-muted">
+          <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Type something..." aria-label="Search">
+        </form>
+        <ul class="nav">
+          <li class="nav-item">
+
+            <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+              <i class="fe fe-sun fe-16"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+              <img class="logo" src="{% static 'images/logoo.png' %}" width="175" hight="175" /><br>
+          </div>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Menu</span>
+          </p>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/"><i class="fe fe-home fe-16"></i>
+                    <span class="ml-1 item-text">Dashboard</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Status</span>
+          </p>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/tablebasic"><i class="fas fa-tv "></i>
+                    <span class="ml-1 item-text">Live Status</span></a>
+                </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/tabledatatables"><i class="fas fa-history"></i>
+                    <span class="ml-1 item-text">History</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Feature</span>
+          </p>
+           <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/calendar"><i class="fe fe-calendar fe-16"></i>
+                    <span class="ml-1 item-text">Calendar</span></a>
+                </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>About-us</span>
+          </p>
+           <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/contact"><i class="fe fe-phone fe-16"></i>
+                    <span class="ml-1 item-text">Contact-us</span></a>
+                </li>
+          </ul>
+                     <ul class="navbar-nav flex-fill w-100 mb-2">
+           <li class="nav-item">
+                  <a class="nav-link pl-3" href="/logout"><i class="fas fa-tv "></i>
+                    <span class="ml-1 item-text">Logout</span></a>
+                </li>
+          </ul>
+        </nav>
+      </aside>
+      <main role="main" class="main-content">
+          <div>
+              <h3>Hello !!</h3>
+              <br>
+          </div>
+          <h2 class="h5 page-title">Profile & Live Updates</h2>
+
+            <p class="text-muted">  </p>
+            <div class="row">
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow bg-primary text-white">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary-light">
+                          <i class="fe fe-16 fe-shopping-bag text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col pr-0">
+                        <p class="small text-light mb-0">Fire ::</p>
+                        <span class="h3 mb-0 text-white">{{ Fire.fire_value }}</span>
+<!--                        <span class="small text-muted">+5.5%</span>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-shopping-cart text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col pr-0">
+                        <p class="small text-muted mb-0">Waterlevel </p>
+                        <span class="h3 mb-0">{{ WaterLevel.wl_value }}</span>
+<!--                        <span class="small text-success">+16.5%</span>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-filter text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Soil Moisture</p>
+                        <div class="row align-items-center no-gutters">
+                          <div class="col-auto">
+                            <span class="h3 mr-2 mb-0"> {{ soil.soil_value }} </span>
+                          </div>
+                          <div class="col-md-12 col-lg">
+                            <div class="progress progress-sm mt-2" style="height:3px">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 87%" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-3 text-center">
+                        <span class="circle circle-sm bg-primary">
+                          <i class="fe fe-16 fe-activity text-white mb-0"></i>
+                        </span>
+                      </div>
+                      <div class="col">
+                        <p class="small text-muted mb-0">Security</p>
+                        <span class="h3 mb-0">{{ secvalue.sec_value }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- end section -->
+            <!-- info small box -->
+          <br>
+          <div class="chart">
+              <img src="{% static 'images/alertgraph.png'%}">
+          <img src="{% static 'images/complaintgraph.png'%}">
+          </div>
+          <br>
+<!--    <section id="hero">-->
+<!--    <div class="hero-container" data-aos="fade-up">-->
+<!--      <h1>Welcome, {{ lastdata3.soil_value }}</h1>-->
+<!--      <h2>Government Polytechnic,Nr. Panjarapol Ahmedabad 380015 </h2>-->
+<!--      <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>-->
+<!--    </div>-->
+<!--  </section>-->
+          <div class="profile">
+              <h4>User name :: </h4>
+              <br>
+              <h4>Your Address :: </h4>
+              <br>
+              <h4>Your Mobile Number :: </h4>
+              <br>
+              <h4>Your Email :: </h4>
+
+          </div>
+      </main> <!-- main -->
+    </div> <!-- .wrapper --><br><br><br><br><br>
+<!--    <footer class="w3l-footer-29-main">-->
+<!--        <div class="footer-29-w3l py-5">-->
+<!--            <div class="container pt-md-5">-->
+<!--                <div class="w3l-footer-text-style">-->
+<!--                    <div class="footer-list-cont d-sm-flex align-items-center justify-content-between mb-5">-->
+
+<!--                        <h2 class="w3logo"><a class="navbar-brand" href="{% url 'indexpage' %}">-->
+<!--                                Agri<span class="sub-color">Tech</span>-->
+<!--                            </a></h2>-->
+<!--&lt;!&ndash;                        <div class="main-social-footer-29">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li class="w3follow mt-sm-0 mt-4">Follows On : </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </ul>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row footer-top-29 pt-lg-5 pt-sm-4">-->
+<!--                    <div class="col-lg-3 col-sm-6">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5>Government Polytechnic,Ahmedabad<br> Gujarat,India</h5>-->
+<!--&lt;!&ndash;                            <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>&ndash;&gt;-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-3 col-sm-6 mt-sm-0 mt-4 ps-lg-5">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5>Phone</h5>-->
+<!--                            <h5 class="phone-number-text mt-2"><a href="tel:+91 9054820298">+91 9054820298</a></h5>-->
+<!--                        </div>-->
+<!--                        <div class="address-grid mt-sm-5 mt-4">-->
+<!--                            <h5>E-mail</h5>-->
+<!--                            <h5 class="email-cont-text mt-1"> <a href="mailto:agriproject1310@gmail.com" class="mail">AgriTech@gmail.com</a></h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-lg-2 col-md-6 col-sm-5 footer-list-menu ps-lg-5 mt-lg-0 mt-sm-5 mt-4">-->
+<!--                        <div class="address-grid">-->
+<!--                            <h5 class="mb-4 pb-lg-2">Support</h5>-->
+<!--                            <ul>-->
+<!--                                <li><a href="#privacy">Privacy Policy</a></li>-->
+<!--                                <li><a href="#terms"> Terms of Service</a></li>-->
+<!--                                <li><a href="{% url 'contactpage' %}">Contact</a></li>-->
+<!--                                <li><a href="#faq">faQ</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="address-grid col-lg-4 col-md-6 col-sm-7 ps-lg-5 mt-lg-0 mt-sm-5 mt-4 w3l-footer-16-main">-->
+
+<!--                        <form action="#" class="subscribe d-flex mt-4 pt-lg-2 mb-4" method="post">-->
+<!--                            <input type="email" name="email" placeholder="Email Address" required="">-->
+<!--                            <button><span class="fa fa-paper-plane" aria-hidden="true"></span></button>-->
+<!--                        </form>-->
+<!--                        <p>Subscribe to our mailing list and get updates to your email inbox.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; copyright &ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w3l-copyright text-center mt-lg-5 mt-sm-4 pt-md-4 pt-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p class="copy-footer-29">© 2021 Agrowfarm. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                            W3layouts</a></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+
+
+<!--    <div class="container">-->
+<!--      <div class="copyright">-->
+<!--        &copy; Copyright <strong><span>AgriTech</span></strong>. All Rights Reserved-->
+<!--      </div>-->
+<!--      <div class="credits">-->
+<!--        &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;-->
+<!--        &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;-->
+<!--        &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;-->
+<!--        &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ &ndash;&gt;-->
+<!--        Designed by AgriTech</a>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <script src=" {% static 'js/jquery.min.js' %} "></script>
+    <script src=" {% static 'js/popper.min.js' %} "></script>
+    <script src=" {% static 'js/moment.min.js' %} "></script>
+    <script src=" {% static 'js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'js/simplebar.min.js' %} "></script>
+    <script src=" {% static 'js/daterangepicker.js' %} "></script>
+    <script src=" {% static 'js/jquery.stickOnScroll.js' %} "></script>
+    <script src=" {% static 'js/tinycolor-min.js' %} "></script>
+    <script src=" {% static 'js/config.js' %} "></script>
+    <script src=" {% static 'js/d3.min.js' %} "></script>
+    <script src=" {% static 'js/topojson.min.js' %} "></script>
+    <script src=" {% static 'js/datamaps.all.min.js' %} "></script>
+    <script src=" {% static 'js/datamaps-zoomto.js' %} "></script>
+    <script src=" {% static 'js/datamaps.custom.js' %} "></script>
+    <script src=" {% static 'js/Chart.min.js' %} "></script>
+    <script>
+      /* defind global options */
+      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+    </script>
+    <script src=" {% static 'js/gauge.min.js' %} "></script>
+    <script src=" {% static 'js/jquery.sparkline.min.js' %} "></script>
+    <script src=" {% static 'js/apexcharts.min.js' %} "></script>
+    <script src=" {% static 'js/apexcharts.custom.js' %} "></script>
+    <script src=" {% static 'js/jquery.mask.min.js' %} "></script>
+    <script src=" {% static 'js/select2.min.js' %} "></script>
+    <script src=" {% static 'js/jquery.steps.min.js' %} "></script>
+    <script src=" {% static 'js/jquery.validate.min.js' %} "></script>
+    <script src=" {% static 'js/jquery.timepicker.js' %} "></script>
+    <script src=" {% static 'js/dropzone.min.js' %} "></script>
+    <script src=" {% static 'js/uppy.min.js' %} "></script>
+    <script src=" {% static 'js/quill.min.js' %} "></script>
+    <script>
+      $('.select2').select2(
+      {
+        theme: 'bootstrap4',
+      });
+      $('.select2-multi').select2(
+      {
+        multiple: true,
+        theme: 'bootstrap4',
+      });
+      $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+      $('.time-input').timepicker(
+      {
+        'scrollDefault': 'now',
+        'zindex': '9999' /* fix modal open */
+      });
+      /** date range picker */
+      if ($('.datetimes').length)
+      {
+        $('.datetimes').daterangepicker(
+        {
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale:
+          {
+            format: 'M/DD hh:mm A'
+          }
+        });
+      }
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end)
+      {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      $('#reportrange').daterangepicker(
+      {
+        startDate: start,
+        endDate: end,
+        ranges:
+        {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+      cb(start, end);
+      $('.input-placeholder').mask("00/00/0000",
+      {
+        placeholder: "_//_"
+      });
+      $('.input-zip').mask('00000-000',
+      {
+        placeholder: "_-__"
+      });
+      $('.input-money').mask("#.##0,00",
+      {
+        reverse: true
+      });
+      $('.input-phoneus').mask('(000) 000-0000');
+      $('.input-mixed').mask('AAA 000-S0S');
+      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+      {
+        translation:
+        {
+          'Z':
+          {
+            pattern: /[0-9]/,
+            optional: true
+          }
+        },
+        placeholder: "_._._._"
+      });
+      // editor
+      var editor = document.getElementById('editor');
+      if (editor)
+      {
+        var toolbarOptions = [
+          [
+          {
+            'font': []
+          }],
+          [
+          {
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+          ['bold', 'italic', 'underline', 'strike'],
+          ['blockquote', 'code-block'],
+          [
+          {
+            'header': 1
+          },
+          {
+            'header': 2
+          }],
+          [
+          {
+            'list': 'ordered'
+          },
+          {
+            'list': 'bullet'
+          }],
+          [
+          {
+            'script': 'sub'
+          },
+          {
+            'script': 'super'
+          }],
+          [
+          {
+            'indent': '-1'
+          },
+          {
+            'indent': '+1'
+          }], // outdent/indent
+          [
+          {
+            'direction': 'rtl'
+          }], // text direction
+          [
+          {
+            'color': []
+          },
+          {
+            'background': []
+          }], // dropdown with defaults from theme
+          [
+          {
+            'align': []
+          }],
+          ['clean'] // remove formatting button
+        ];
+        var quill = new Quill(editor,
+        {
+          modules:
+          {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+      }
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function()
+      {
+        'use strict';
+        window.addEventListener('load', function()
+        {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form)
+          {
+            form.addEventListener('submit', function(event)
+            {
+              if (form.checkValidity() === false)
+              {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
+      var uptarg = document.getElementById('drag-drop-area');
+      if (uptarg)
+      {
+        var uppy = Uppy.Core().use(Uppy.Dashboard,
+        {
+          inline: true,
+          target: uptarg,
+          proudlyDisplayPoweredByUppy: false,
+          theme: 'dark',
+          width: 770,
+          height: 210,
+          plugins: ['Webcam']
+        }).use(Uppy.Tus,
+        {
+          endpoint: 'https://master.tus.io/files/'
+        });
+        uppy.on('complete', (result) =>
+        {
+          console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        });
+      }
+    </script>
+    <script src=" {% static 'js/apps.js' %} "></script>
+  </body>
+</html>
